@@ -1,0 +1,9 @@
+/* 
+  LocalizeableStrings.strings
+  ClipHelper
+
+  Created by Rett Pop on 2015-12-14.
+  Copyright © 2015 SapiSoft. All rights reserved.
+*/
+
+"btn.ClearClipboard" = "Clear clipboard";
