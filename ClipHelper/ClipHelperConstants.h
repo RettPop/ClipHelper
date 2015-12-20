@@ -26,5 +26,9 @@
 
 #define LOC(key) NSLocalizedString((key), @"")
 
+#define kKeyNameSwDTLong @"showDTLong"
+#define kKeyNameSwClearClipboard @"showClearClipboard"
+#define kAppGroupName @"group.com.sapisoft.ClipHelper"
+
 
 #endif /* ClipHelperConstants_h */

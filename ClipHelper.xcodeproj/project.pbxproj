@@ -23,6 +23,8 @@
 		7BBB004F1B93849A00186FAD /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB004E1B93849A00186FAD /* TodayViewController.m */; };
 		7BBB00511B93849A00186FAD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BBB00501B93849A00186FAD /* MainInterface.storyboard */; };
 		7BBB00541B93849A00186FAD /* ClipHelperWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7BBB00461B93849900186FAD /* ClipHelperWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7BCC3C101C270881001AF8BF /* CHOptionsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */; };
+		7BCC3C111C270881001AF8BF /* CHOptionsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		7B0D25DF1C1E21A0002A0285 /* CHHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHeader.pch; sourceTree = "<group>"; };
 		7B0D25E51C1E221B002A0285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/LocalizeableStrings.strings; sourceTree = "<group>"; };
 		7B0D25E71C1E2220002A0285 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizeableStrings.strings; sourceTree = "<group>"; };
+		7B2B613F1C270032002EB9CB /* ClipHelperWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ClipHelperWidget.entitlements; sourceTree = "<group>"; };
+		7B6861751C26FD43009B8BF0 /* ClipHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ClipHelper.entitlements; sourceTree = "<group>"; };
 		7BBB00161B937E2D00186FAD /* ClipHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBB001A1B937E2D00186FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BBB001B1B937E2D00186FAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 		7BBB004D1B93849A00186FAD /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		7BBB004E1B93849A00186FAD /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		7BBB00501B93849A00186FAD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		7BCC3C0E1C270881001AF8BF /* CHOptionsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHOptionsHelper.h; sourceTree = "<group>"; };
+		7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHOptionsHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 		7BBB000D1B937E2D00186FAD = {
 			isa = PBXGroup;
 			children = (
+				7BCC3C0E1C270881001AF8BF /* CHOptionsHelper.h */,
+				7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */,
 				7BBB00181B937E2D00186FAD /* ClipHelper */,
 				7BBB00351B937E2D00186FAD /* ClipHelperTests */,
 				7BBB004A1B93849A00186FAD /* ClipHelperWidget */,
@@ -136,6 +144,7 @@
 		7BBB00181B937E2D00186FAD /* ClipHelper */ = {
 			isa = PBXGroup;
 			children = (
+				7B6861751C26FD43009B8BF0 /* ClipHelper.entitlements */,
 				7B0D25DA1C1E1F4A002A0285 /* UIView+SSUIViewCategory.h */,
 				7B0D25DB1C1E1F4A002A0285 /* UIView+SSUIViewCategory.m */,
 				7BBB001D1B937E2D00186FAD /* AppDelegate.h */,
@@ -189,6 +198,7 @@
 		7BBB004A1B93849A00186FAD /* ClipHelperWidget */ = {
 			isa = PBXGroup;
 			children = (
+				7B2B613F1C270032002EB9CB /* ClipHelperWidget.entitlements */,
 				7BBB004D1B93849A00186FAD /* TodayViewController.h */,
 				7BBB004E1B93849A00186FAD /* TodayViewController.m */,
 				7BBB00501B93849A00186FAD /* MainInterface.storyboard */,
@@ -275,6 +285,11 @@
 					7BBB00151B937E2D00186FAD = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = AUP6MPX7R6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					7BBB00311B937E2D00186FAD = {
 						CreatedOnToolsVersion = 6.4;
@@ -283,6 +298,11 @@
 					7BBB00451B93849900186FAD = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = AUP6MPX7R6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -342,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BBB001F1B937E2D00186FAD /* AppDelegate.m in Sources */,
+				7BCC3C101C270881001AF8BF /* CHOptionsHelper.m in Sources */,
 				7BBB001C1B937E2D00186FAD /* main.m in Sources */,
 				7BBB00251B937E2D00186FAD /* ViewController.m in Sources */,
 				7B0D25DC1C1E1F4A002A0285 /* UIView+SSUIViewCategory.m in Sources */,
@@ -362,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BBB004F1B93849A00186FAD /* TodayViewController.m in Sources */,
+				7BCC3C111C270881001AF8BF /* CHOptionsHelper.m in Sources */,
 				7B0D25DD1C1E1F4A002A0285 /* UIView+SSUIViewCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,12 +520,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClipHelper/ClipHelper.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ClipHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "324109f5-0801-4774-b3d5-106d0d850cf3";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -511,12 +535,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClipHelper/ClipHelper.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ClipHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "324109f5-0801-4774-b3d5-106d0d850cf3";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -557,6 +583,7 @@
 		7BBB00561B93849A00186FAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ClipHelperWidget/ClipHelperWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -565,6 +592,7 @@
 				);
 				INFOPLIST_FILE = ClipHelperWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp.ClipHelperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -574,10 +602,12 @@
 		7BBB00571B93849A00186FAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ClipHelperWidget/ClipHelperWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ClipHelperWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp.ClipHelperWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;

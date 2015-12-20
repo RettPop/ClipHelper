@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="📋" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tw-bR-oZZ">
                                 <rect key="frame" x="0.0" y="3" width="29" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZR-Kj-jDB">
@@ -37,35 +37,14 @@
                                     <action selector="btnCopyDateTimeClicked:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="FuQ-uV-gwq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="📋" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLa-bn-oSz">
-                                <rect key="frame" x="0.0" y="32" width="29" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-sA-NRe">
-                                <rect key="frame" x="45" y="28" width="166" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="166" id="Dw3-26-m1w"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Clear clipboard">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clearClipBtnTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="R1v-rX-jyd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="CZR-Kj-jDB" firstAttribute="leading" secondItem="0tw-bR-oZZ" secondAttribute="trailing" constant="16" id="AWE-Xl-und"/>
                             <constraint firstItem="CZR-Kj-jDB" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="45" id="R87-7R-zon"/>
                             <constraint firstItem="0tw-bR-oZZ" firstAttribute="bottom" secondItem="FKl-LY-JtV" secondAttribute="top" id="UK0-KC-UwV"/>
                             <constraint firstItem="0tw-bR-oZZ" firstAttribute="top" secondItem="CZR-Kj-jDB" secondAttribute="top" constant="4" id="dY9-Lh-kWo"/>
-                            <constraint firstItem="mLa-bn-oSz" firstAttribute="top" secondItem="bdd-sA-NRe" secondAttribute="top" constant="4" id="iaY-dP-nzZ"/>
                             <constraint firstItem="CZR-Kj-jDB" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" constant="-1" id="ruB-ks-VcJ"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="CZR-Kj-jDB" secondAttribute="bottom" constant="2" id="ryH-av-zvy"/>
-                            <constraint firstItem="bdd-sA-NRe" firstAttribute="leading" secondItem="mLa-bn-oSz" secondAttribute="trailing" constant="16" id="tVf-Qm-cdV"/>
                             <constraint firstItem="0tw-bR-oZZ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="zBN-UI-E2X"/>
                         </constraints>
                     </view>
@@ -76,7 +55,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="74"/>
                     <connections>
-                        <outlet property="btnClearClipboard" destination="bdd-sA-NRe" id="38h-CL-DPA"/>
                         <outlet property="btnCopyDateTime" destination="CZR-Kj-jDB" id="tcn-cd-EGO"/>
                     </connections>
                 </viewController>
