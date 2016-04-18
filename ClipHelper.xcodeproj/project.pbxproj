@@ -13,6 +13,10 @@
 		7B0D25E41C1E221B002A0285 /* LocalizeableStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B0D25E61C1E221B002A0285 /* LocalizeableStrings.strings */; };
 		7B371C541CC527DC00281EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B371C571CC527DC00281EC3 /* Localizable.strings */; };
 		7B371C551CC527DC00281EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B371C571CC527DC00281EC3 /* Localizable.strings */; };
+		7B72964B1CC562FF00EA5514 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7296491CC562FF00EA5514 /* Fabric.framework */; };
+		7B72964C1CC562FF00EA5514 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7296491CC562FF00EA5514 /* Fabric.framework */; };
+		7B72964D1CC562FF00EA5514 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B72964A1CC562FF00EA5514 /* Crashlytics.framework */; };
+		7B72964E1CC562FF00EA5514 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B72964A1CC562FF00EA5514 /* Crashlytics.framework */; };
 		7BBB001C1B937E2D00186FAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB001B1B937E2D00186FAD /* main.m */; };
 		7BBB001F1B937E2D00186FAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB001E1B937E2D00186FAD /* AppDelegate.m */; };
 		7BBB00221B937E2D00186FAD /* ClipHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB00201B937E2D00186FAD /* ClipHelper.xcdatamodeld */; };
@@ -74,6 +78,8 @@
 		7B371C581CC527E200281EC3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7B371C5A1CC527FA00281EC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7B6861751C26FD43009B8BF0 /* ClipHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ClipHelper.entitlements; sourceTree = "<group>"; };
+		7B7296491CC562FF00EA5514 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		7B72964A1CC562FF00EA5514 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		7BBB00161B937E2D00186FAD /* ClipHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBB001A1B937E2D00186FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BBB001B1B937E2D00186FAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B72964D1CC562FF00EA5514 /* Crashlytics.framework in Frameworks */,
+				7B72964B1CC562FF00EA5514 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +126,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BBB00491B93849A00186FAD /* NotificationCenter.framework in Frameworks */,
+				7B72964E1CC562FF00EA5514 /* Crashlytics.framework in Frameworks */,
+				7B72964C1CC562FF00EA5514 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +137,8 @@
 		7BBB000D1B937E2D00186FAD = {
 			isa = PBXGroup;
 			children = (
+				7B7296491CC562FF00EA5514 /* Fabric.framework */,
+				7B72964A1CC562FF00EA5514 /* Crashlytics.framework */,
 				7BBB00181B937E2D00186FAD /* ClipHelper */,
 				7BBB00351B937E2D00186FAD /* ClipHelperTests */,
 				7BBB004A1B93849A00186FAD /* ClipHelperWidget */,
@@ -235,6 +247,7 @@
 				7BBB00131B937E2D00186FAD /* Frameworks */,
 				7BBB00141B937E2D00186FAD /* Resources */,
 				7BBB00581B93849A00186FAD /* Embed App Extensions */,
+				7B7296481CC562D100EA5514 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -271,6 +284,7 @@
 				7BBB00421B93849900186FAD /* Sources */,
 				7BBB00431B93849900186FAD /* Frameworks */,
 				7BBB00441B93849900186FAD /* Resources */,
+				7B371C5B1CC55BC500281EC3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -367,6 +381,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B371C5B1CC55BC500281EC3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 554ee819c527e61b838fa4f10f1acab1e7304b92 87196845778a2b350212654d91c8ffb3a199bbc785862a177d9fbaec1d8c4558";
+		};
+		7B7296481CC562D100EA5514 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 554ee819c527e61b838fa4f10f1acab1e7304b92 87196845778a2b350212654d91c8ffb3a199bbc785862a177d9fbaec1d8c4558   ";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7BBB00121B937E2D00186FAD /* Sources */ = {
@@ -547,6 +591,10 @@
 				CODE_SIGN_ENTITLEMENTS = ClipHelper/ClipHelper.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ClipHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp;
@@ -563,6 +611,10 @@
 				CODE_SIGN_ENTITLEMENTS = ClipHelper/ClipHelper.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ClipHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp;
@@ -612,6 +664,10 @@
 				CODE_SIGN_ENTITLEMENTS = ClipHelperWidget/ClipHelperWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -632,6 +688,10 @@
 				CODE_SIGN_ENTITLEMENTS = ClipHelperWidget/ClipHelperWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ClipHelperWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp.ClipHelperWidget;

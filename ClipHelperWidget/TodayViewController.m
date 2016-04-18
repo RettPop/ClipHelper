@@ -18,9 +18,9 @@
 #define kDefButtonHeight 34.f
 #define kOneButtonSpaceHeight (kDefButtonHeight + kDefSpace)
 
-#define kBtnTitleCopyDTShortFormat @"📋📆: "
-#define kBtnTitleCopyDTLongFormat @"📋📅: "
-#define kBtnTitleClearClipboard @"📋🗑️: "
+#define kBtnTitleCopyDTShortFormat @"📋📆 "
+#define kBtnTitleCopyDTLongFormat @"📋📅 "
+#define kBtnTitleClearClipboard @"📋🗑️ "
 
 
 typedef enum : NSUInteger {
@@ -111,7 +111,8 @@ typedef enum : NSUInteger {
     [newButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [newButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [newButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [[newButton titleLabel] setFont:[UIFont systemFontOfSize:11.f]];
+    
+    [[newButton titleLabel] setFont:[UIFont systemFontOfSize:14.f]];
     
     [newButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [newButton setBackgroundColor:[UIColor clearColor]];

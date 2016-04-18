@@ -9,6 +9,7 @@
 #import "CHOptionsHelper.h"
 #import "ClipHelperConstants.h"
 
+
 @implementation CHOptionsHelper
 
 +(BOOL)optionValueForKey:(NSString *)keyName
