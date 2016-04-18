@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  ClipHelper
+
+  Created by Rett Pop on 2016-04-18.
+  Copyright © 2016 SapiSoft. All rights reserved.
+*/
+
+"title.DateTimeLongFormat" = "Дата/час: довгий формат";
+"title.DateTimeShortFormat" = "Дата/час: стислий формат";
+"title.ClearClipboard" = "Очистити буфер обмiну";
+"text.WidgetAdding" = "Потягнить униз вiд верхнього боку екрану, щоб потрапити до Центру Повiдомлень. Тiм натиснить 'Змiнити' унизу закладки 'Сьогоднi', тiм '+' щоб додати вiджет ClipHelper, та, нарештi, 'Готово' щоб зберегти налаштування.";
+"title.section.Settings" = "Дії вiджета";
+"title.section.Setup" = "Налаштування";
+"btn.ClearClipboard" = "Очистити буфер обмiну";

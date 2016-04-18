@@ -11,10 +11,12 @@
 		7B0D25DD1C1E1F4A002A0285 /* UIView+SSUIViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D25DB1C1E1F4A002A0285 /* UIView+SSUIViewCategory.m */; };
 		7B0D25E31C1E221B002A0285 /* LocalizeableStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B0D25E61C1E221B002A0285 /* LocalizeableStrings.strings */; };
 		7B0D25E41C1E221B002A0285 /* LocalizeableStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B0D25E61C1E221B002A0285 /* LocalizeableStrings.strings */; };
+		7B371C541CC527DC00281EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B371C571CC527DC00281EC3 /* Localizable.strings */; };
+		7B371C551CC527DC00281EC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B371C571CC527DC00281EC3 /* Localizable.strings */; };
 		7BBB001C1B937E2D00186FAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB001B1B937E2D00186FAD /* main.m */; };
 		7BBB001F1B937E2D00186FAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB001E1B937E2D00186FAD /* AppDelegate.m */; };
 		7BBB00221B937E2D00186FAD /* ClipHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB00201B937E2D00186FAD /* ClipHelper.xcdatamodeld */; };
-		7BBB00251B937E2D00186FAD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB00241B937E2D00186FAD /* ViewController.m */; };
+		7BBB00251B937E2D00186FAD /* VCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB00241B937E2D00186FAD /* VCSettings.m */; };
 		7BBB00281B937E2D00186FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BBB00261B937E2D00186FAD /* Main.storyboard */; };
 		7BBB002A1B937E2D00186FAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BBB00291B937E2D00186FAD /* Images.xcassets */; };
 		7BBB002D1B937E2D00186FAD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BBB002B1B937E2D00186FAD /* LaunchScreen.xib */; };
@@ -66,6 +68,11 @@
 		7B0D25E51C1E221B002A0285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/LocalizeableStrings.strings; sourceTree = "<group>"; };
 		7B0D25E71C1E2220002A0285 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizeableStrings.strings; sourceTree = "<group>"; };
 		7B2B613F1C270032002EB9CB /* ClipHelperWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ClipHelperWidget.entitlements; sourceTree = "<group>"; };
+		7B371C521CC5257A00281EC3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LocalizeableStrings.strings; sourceTree = "<group>"; };
+		7B371C531CC5258300281EC3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LocalizeableStrings.strings; sourceTree = "<group>"; };
+		7B371C561CC527DC00281EC3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7B371C581CC527E200281EC3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7B371C5A1CC527FA00281EC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7B6861751C26FD43009B8BF0 /* ClipHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ClipHelper.entitlements; sourceTree = "<group>"; };
 		7BBB00161B937E2D00186FAD /* ClipHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBB001A1B937E2D00186FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,8 +80,8 @@
 		7BBB001D1B937E2D00186FAD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7BBB001E1B937E2D00186FAD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7BBB00211B937E2D00186FAD /* ClipHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClipHelper.xcdatamodel; sourceTree = "<group>"; };
-		7BBB00231B937E2D00186FAD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7BBB00241B937E2D00186FAD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7BBB00231B937E2D00186FAD /* VCSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCSettings.h; sourceTree = "<group>"; };
+		7BBB00241B937E2D00186FAD /* VCSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCSettings.m; sourceTree = "<group>"; };
 		7BBB00271B937E2D00186FAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BBB00291B937E2D00186FAD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7BBB002C1B937E2D00186FAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -87,8 +94,8 @@
 		7BBB004D1B93849A00186FAD /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		7BBB004E1B93849A00186FAD /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		7BBB00501B93849A00186FAD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		7BCC3C0E1C270881001AF8BF /* CHOptionsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHOptionsHelper.h; sourceTree = "<group>"; };
-		7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHOptionsHelper.m; sourceTree = "<group>"; };
+		7BCC3C0E1C270881001AF8BF /* CHOptionsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHOptionsHelper.h; path = ../CHOptionsHelper.h; sourceTree = "<group>"; };
+		7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHOptionsHelper.m; path = ../CHOptionsHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +127,6 @@
 		7BBB000D1B937E2D00186FAD = {
 			isa = PBXGroup;
 			children = (
-				7BCC3C0E1C270881001AF8BF /* CHOptionsHelper.h */,
-				7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */,
 				7BBB00181B937E2D00186FAD /* ClipHelper */,
 				7BBB00351B937E2D00186FAD /* ClipHelperTests */,
 				7BBB004A1B93849A00186FAD /* ClipHelperWidget */,
@@ -149,8 +154,10 @@
 				7B0D25DB1C1E1F4A002A0285 /* UIView+SSUIViewCategory.m */,
 				7BBB001D1B937E2D00186FAD /* AppDelegate.h */,
 				7BBB001E1B937E2D00186FAD /* AppDelegate.m */,
-				7BBB00231B937E2D00186FAD /* ViewController.h */,
-				7BBB00241B937E2D00186FAD /* ViewController.m */,
+				7BBB00231B937E2D00186FAD /* VCSettings.h */,
+				7BBB00241B937E2D00186FAD /* VCSettings.m */,
+				7BCC3C0E1C270881001AF8BF /* CHOptionsHelper.h */,
+				7BCC3C0F1C270881001AF8BF /* CHOptionsHelper.m */,
 				7BBB00261B937E2D00186FAD /* Main.storyboard */,
 				7BBB00291B937E2D00186FAD /* Images.xcassets */,
 				7BBB002B1B937E2D00186FAD /* LaunchScreen.xib */,
@@ -165,6 +172,7 @@
 			children = (
 				7BBB001A1B937E2D00186FAD /* Info.plist */,
 				7BBB001B1B937E2D00186FAD /* main.m */,
+				7B371C571CC527DC00281EC3 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -313,6 +321,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				uk,
 			);
 			mainGroup = 7BBB000D1B937E2D00186FAD;
 			productRefGroup = 7BBB00171B937E2D00186FAD /* Products */;
@@ -331,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B371C541CC527DC00281EC3 /* Localizable.strings in Resources */,
 				7B0D25E31C1E221B002A0285 /* LocalizeableStrings.strings in Resources */,
 				7BBB00281B937E2D00186FAD /* Main.storyboard in Resources */,
 				7BBB002D1B937E2D00186FAD /* LaunchScreen.xib in Resources */,
@@ -350,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B0D25E41C1E221B002A0285 /* LocalizeableStrings.strings in Resources */,
+				7B371C551CC527DC00281EC3 /* Localizable.strings in Resources */,
 				7BBB00511B93849A00186FAD /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +376,7 @@
 				7BBB001F1B937E2D00186FAD /* AppDelegate.m in Sources */,
 				7BCC3C101C270881001AF8BF /* CHOptionsHelper.m in Sources */,
 				7BBB001C1B937E2D00186FAD /* main.m in Sources */,
-				7BBB00251B937E2D00186FAD /* ViewController.m in Sources */,
+				7BBB00251B937E2D00186FAD /* VCSettings.m in Sources */,
 				7B0D25DC1C1E1F4A002A0285 /* UIView+SSUIViewCategory.m in Sources */,
 				7BBB00221B937E2D00186FAD /* ClipHelper.xcdatamodeld in Sources */,
 			);
@@ -409,8 +421,20 @@
 			children = (
 				7B0D25E51C1E221B002A0285 /* Base */,
 				7B0D25E71C1E2220002A0285 /* en */,
+				7B371C521CC5257A00281EC3 /* ru */,
+				7B371C531CC5258300281EC3 /* uk */,
 			);
 			name = LocalizeableStrings.strings;
+			sourceTree = "<group>";
+		};
+		7B371C571CC527DC00281EC3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B371C561CC527DC00281EC3 /* ru */,
+				7B371C581CC527E200281EC3 /* uk */,
+				7B371C5A1CC527FA00281EC3 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		7BBB00261B937E2D00186FAD /* Main.storyboard */ = {
@@ -528,6 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -543,6 +568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sapisoft.ClipHelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -596,6 +622,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -611,6 +638,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

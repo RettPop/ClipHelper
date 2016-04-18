@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  ClipHelper
+
+  Created by Rett Pop on 2016-04-18.
+  Copyright © 2016 SapiSoft. All rights reserved.
+*/
+
+"title.DateTimeLongFormat" = "Date/time long format";
+"title.DateTimeShortFormat" = "Date/time short format";
+"title.ClearClipboard" = "Clear clilpboard";
+"text.WidgetAdding" = "Swipe down from the top of your screen to access Notification Center. Then tap 'Edit' at the bottom of 'Today' tab, then '+' to add the ClipHelper widget and then 'Done' to save settings.";
+"title.section.Settings" = "Widget actions";
+"title.section.Setup" = "Setup";
+"btn.ClearClipboard" = "Clear clipboard";

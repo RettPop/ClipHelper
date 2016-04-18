@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VCSettings.h
 //  ClipHelper
 //
 //  Created by Rett Pop on 2015-08-30.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface VCSettings : UITableViewController
 
 
 @end
