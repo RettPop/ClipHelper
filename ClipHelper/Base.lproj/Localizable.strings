@@ -8,7 +8,7 @@
 
 "title.DateTimeLongFormat" = "Date/time long format";
 "title.DateTimeShortFormat" = "Date/time short format";
-"title.ClearClipboard" = "Clear clilpboard";
+"title.ClearClipboard" = "Clear clipboard";
 "text.WidgetAdding" = "Swipe down from the top of your screen to access Notification Center. Then tap 'Edit' at the bottom of 'Today' tab, then '+' to add the ClipHelper widget and then 'Done' to save settings.";
 "title.section.Settings" = "Widget actions";
 "title.section.Setup" = "Setup";

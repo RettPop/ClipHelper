@@ -206,7 +206,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2EV-Cc-K5f">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2EV-Cc-K5f">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Swipe down from the top of your screen to access Notification Center. Then tap 'Edit' at the bottom of 'Today' tab, then '+' to add the ClipHelper widget and then 'Done' to save settings.</string>
@@ -214,6 +214,12 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2EV-Cc-K5f" secondAttribute="bottom" id="0e4-h2-zzp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2EV-Cc-K5f" secondAttribute="trailing" id="VIH-rl-jGN"/>
+                                                <constraint firstItem="2EV-Cc-K5f" firstAttribute="leading" secondItem="ouG-em-5bI" secondAttribute="leading" id="g7b-ef-MpT"/>
+                                                <constraint firstItem="2EV-Cc-K5f" firstAttribute="top" secondItem="ouG-em-5bI" secondAttribute="top" id="idM-fW-bzJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
