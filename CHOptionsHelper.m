@@ -20,6 +20,14 @@
     return boolValue;
 }
 
++(NSString *)optionStringValueForKey:(NSString *)keyName
+{
+    NSUserDefaults *def = [[NSUserDefaults alloc] initWithSuiteName:kAppGroupName];
+    NSString *stringValue = [def valueForKey:keyName];
+    def = nil;
+    return stringValue;
+}
+
 +(void)setOptionBoolValue:(BOOL)value forKey:(NSString *)keyName
 {
     NSUserDefaults *def = [[NSUserDefaults alloc] initWithSuiteName:kAppGroupName];
@@ -27,5 +35,11 @@
     def = nil;
 }
 
++(void)setOptionStringValue:(NSString *)value forKey:(NSString *)keyName
+{
+    NSUserDefaults *def = [[NSUserDefaults alloc] initWithSuiteName:kAppGroupName];
+    [def setValue:value forKey:keyName];
+    def = nil;
+}
 
 @end

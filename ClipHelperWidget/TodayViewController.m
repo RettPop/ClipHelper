@@ -21,6 +21,7 @@
 #define kBtnTitleCopyDTShortFormat @"📋📆 "
 #define kBtnTitleCopyDTLongFormat @"📋📅 "
 #define kBtnTitleClearClipboard @"📋🗑️ "
+#define kBtnTitleCopyCustomText @"📋📝 "
 
 
 typedef enum : NSUInteger {
@@ -39,6 +40,9 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) UIButton *btnCopyDTShort;
 @property (strong, nonatomic) UIButton *btnCopyDTLong;
 @property (strong, nonatomic) UIButton *btnClearClipboard;
+@property (strong, nonatomic) UIButton *btnCustomText1;
+@property (strong, nonatomic) UIButton *btnCustomText2;
+@property (strong, nonatomic) UIButton *btnCustomText3;
 @end
 
 @implementation TodayViewController
@@ -67,29 +71,47 @@ typedef enum : NSUInteger {
                                               action:@selector(clearClipBtnTapped:)
                                           onPosition:position++];
     
-    _availableItems = @[_btnCopyDTShort, _btnCopyDTLong, _btnClearClipboard];
+    _btnCustomText1 = [self createButtonWithTitle: [kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:kKeyNameCustomText1]]
+                                           action:@selector(copyCustomTextTapped:)
+                                       onPosition:position++];
+    
+    _btnCustomText2 = [self createButtonWithTitle: [kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:kKeyNameCustomText2]]
+                                           action:@selector(copyCustomTextTapped:)
+                                       onPosition:position++];
+    
+    _btnCustomText3 = [self createButtonWithTitle: [kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:kKeyNameCustomText3]]
+                                           action:@selector(copyCustomTextTapped:)
+                                       onPosition:position++];
+    
+    _availableItems = @[_btnCopyDTShort, _btnCopyDTLong, _btnClearClipboard, _btnCustomText1, _btnCustomText2, _btnCustomText3];
 }
 
 -(void)layoutControls
 {
-    _showDTShort = [CHOptionsHelper optionValueForKey:kKeyNameSwDTShort];
-    _showDTLong = [CHOptionsHelper optionValueForKey:kKeyNameSwDTLong];
-    _showClearCipboard = [CHOptionsHelper optionValueForKey:kKeyNameSwClearClipboard];
+    NSDictionary *controls = @{kKeyNameSwDTShort:_btnCopyDTShort,
+                               kKeyNameSwDTLong:_btnCopyDTLong,
+                               kKeyNameSwClearClipboard:_btnClearClipboard,
+                               kKeyNameSwCustomText1:_btnCustomText1,
+                               kKeyNameSwCustomText2:_btnCustomText2,
+                               kKeyNameSwCustomText3:_btnCustomText3};
+    // to store controls order
+    //TODO: make somehow smarter
+    NSArray *buttons = @[_btnCopyDTShort,
+                         _btnCopyDTLong,
+                         _btnClearClipboard,
+                         _btnCustomText1,
+                         _btnCustomText2,
+                         _btnCustomText3];
 
     [_visibleItems removeAllObjects];
     
-    if( _showDTShort ) {
-        [_visibleItems addObject:_btnCopyDTShort];
+    for (UIView *oneView in buttons) {
+        if( [CHOptionsHelper optionValueForKey:[[controls allKeysForObject:oneView] firstObject]] ) {
+            [_visibleItems addObject:oneView];
+        }
     }
-    if( _showDTLong ) {
-        [_visibleItems addObject:_btnCopyDTLong];
-    }
-    if( _showClearCipboard ) {
-        [_visibleItems addObject:_btnClearClipboard];
-    }
-
-    for (UIView *oneView in _availableItems)
-    {
+    
+    for (UIView *oneView in _availableItems) {
         [oneView removeFromSuperview];
     }
     
@@ -146,6 +168,15 @@ typedef enum : NSUInteger {
 -(IBAction)clearClipBtnTapped:(id)sender
 {
     [self clearClipboard];
+}
+
+-(void)copyCustomTextTapped:(UIButton *)sender
+{
+    NSDictionary *customTexts = @{kKeyNameCustomText1:_btnCustomText1,
+                               kKeyNameCustomText2:_btnCustomText2,
+                               kKeyNameCustomText3:_btnCustomText3};
+    UIPasteboard *pb = [UIPasteboard generalPasteboard];
+    [pb setString:[CHOptionsHelper optionStringValueForKey:[[customTexts allKeysForObject:sender] firstObject]]];
 }
 
 -(void) clearClipboard

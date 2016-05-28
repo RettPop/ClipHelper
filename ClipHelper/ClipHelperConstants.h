@@ -30,6 +30,12 @@
 #define kKeyNameSwDTLong @"showDTLong"
 #define kKeyNameSwDTShort @"showDTShort"
 #define kKeyNameSwClearClipboard @"showClearClipboard"
+#define kKeyNameSwCustomText1 @"showCustomText1"
+#define kKeyNameSwCustomText2 @"showCustomText2"
+#define kKeyNameSwCustomText3 @"showCustomText3"
+#define kKeyNameCustomText1 @"customText1"
+#define kKeyNameCustomText2 @"customText2"
+#define kKeyNameCustomText3 @"customText3"
 
 
 #endif /* ClipHelperConstants_h */

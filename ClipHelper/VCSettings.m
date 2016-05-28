@@ -18,7 +18,10 @@ typedef enum : NSUInteger {
 } TABLE_SECTIONS;
 
 @interface VCSettings ()
-
+{
+    NSDictionary *_switches;
+    NSDictionary *_fields;
+}
 @property (strong, nonatomic) IBOutlet UISwitch *swDTLong;
 @property (strong, nonatomic) IBOutlet UILabel *lblDTLong;
 @property (strong, nonatomic) IBOutlet UISwitch *swDTShort;
@@ -26,6 +29,14 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) IBOutlet UISwitch *swClearClilpboard;
 @property (strong, nonatomic) IBOutlet UILabel *lblClearClilpboard;
 @property (strong, nonatomic) IBOutlet UITextView *textSetup;
+
+@property (strong, nonatomic) IBOutlet UITextField *textCustom1;
+@property (strong, nonatomic) IBOutlet UITextField *textCustom2;
+@property (strong, nonatomic) IBOutlet UITextField *textCustom3;
+@property (strong, nonatomic) IBOutlet UISwitch *swCustom1;
+@property (strong, nonatomic) IBOutlet UISwitch *swCustom2;
+@property (strong, nonatomic) IBOutlet UISwitch *swCustom3;
+
 
 @end
 
@@ -46,23 +57,42 @@ typedef enum : NSUInteger {
     [_lblDTShort setText:LOC(@"title.DateTimeShortFormat")];
     [_lblClearClilpboard setText:LOC(@"title.ClearClipboard")];
     [_textSetup setText:LOC(@"text.WidgetAdding")];
+    
+    for (UITextField *oneField in @[_textCustom1, _textCustom2, _textCustom3])
+    {
+        [oneField setPlaceholder:LOC(@"text.Placeholder.CustomText")];
+    }
 }
 
 -(void)setupControls
 {
-    [_swDTLong setOn:[CHOptionsHelper optionValueForKey:kKeyNameSwDTLong]];
-    [_swDTShort setOn:[CHOptionsHelper optionValueForKey:kKeyNameSwDTShort]];
-    [_swClearClilpboard setOn:[CHOptionsHelper optionValueForKey:kKeyNameSwClearClipboard]];
+    // let it warn. Not going to serialize it, so keys can be non NSString
+    _switches = @{kKeyNameSwDTShort:_swDTShort,
+                  kKeyNameSwDTLong:_swDTLong,
+                  kKeyNameSwClearClipboard:_swClearClilpboard,
+                  kKeyNameSwCustomText1:_swCustom1,
+                  kKeyNameSwCustomText2:_swCustom2,
+                  kKeyNameSwCustomText3:_swCustom3};
+    for (UISwitch *oneSw in [_switches allValues]) {
+        [oneSw setOn:[CHOptionsHelper optionValueForKey:[[_switches allKeysForObject:oneSw] firstObject]]];
+    }
+    
+    _fields = @{kKeyNameCustomText1:_textCustom1,
+                kKeyNameCustomText2:_textCustom2,
+                kKeyNameCustomText3:_textCustom3};
+    for (UITextField *oneField in [_fields allValues]) {
+        [oneField setText:[CHOptionsHelper optionStringValueForKey:[[_fields allKeysForObject:oneField] firstObject]]];
+        [oneField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    }
+}
+- (IBAction)textFieldDidChange:(UITextField *)sender
+{
+    [CHOptionsHelper setOptionStringValue:[sender text] forKey:[[_fields allKeysForObject:sender] firstObject]];
 }
 
 - (IBAction)swValueChanged:(UISwitch *)sender
 {
-    NSString *keyName = (sender == _swDTLong) ? kKeyNameSwDTLong : kKeyNameSwClearClipboard;
-    if( sender == _swDTShort ) {
-        keyName = kKeyNameSwDTShort;
-    }
-    
-    [CHOptionsHelper setOptionBoolValue:[sender isOn] forKey:keyName];
+    [CHOptionsHelper setOptionBoolValue:[sender isOn] forKey:[[_switches allKeysForObject:sender] firstObject]];
 }
 
 #pragma mark -

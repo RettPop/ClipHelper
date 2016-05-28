@@ -13,3 +13,4 @@
 "title.section.Settings" = "Действия виджета";
 "title.section.Setup" = "Настройка";
 "btn.ClearClipboard" = "Очистить буфер обмена";
+"text.Placeholder.CustomText" = "Свободный текст";

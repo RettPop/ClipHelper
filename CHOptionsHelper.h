@@ -11,6 +11,8 @@
 @interface CHOptionsHelper : NSObject
 
 +(BOOL)optionValueForKey:(NSString *)keyName;
++(NSString *)optionStringValueForKey:(NSString *)keyName;
 +(void)setOptionBoolValue:(BOOL)value forKey:(NSString *)keyName;
++(void)setOptionStringValue:(NSString *)value forKey:(NSString *)keyName;
 
 @end
