@@ -18,11 +18,10 @@
 #define kDefButtonHeight 34.f
 #define kOneButtonSpaceHeight (kDefButtonHeight + kDefSpace)
 
-#define kBtnTitleCopyDTShortFormat @"📋📆 "
-#define kBtnTitleCopyDTLongFormat @"📋📅 "
-#define kBtnTitleClearClipboard @"📋🗑️ "
-#define kBtnTitleCopyCustomText @"📋📝 "
-
+#define kBtnTitleCopyDTShortFormat @"📆 "
+#define kBtnTitleCopyDTLongFormat @"📅 "
+#define kBtnTitleClearClipboard @"🗑️ "
+#define kBtnTitleCopyCustomText @"📝 "
 
 typedef enum : NSUInteger {
     DTFORMAT_SHORT,
@@ -52,43 +51,47 @@ typedef enum : NSUInteger {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _visibleItems = [NSMutableArray arrayWithCapacity:3]; // have 3 buttons for now
+    _visibleItems = [NSMutableArray arrayWithCapacity:6]; // have 6 buttons for now
     [self setupControls];
 }
 
 -(void)setupControls
 {
     NSUInteger position = 0;
-    _btnCopyDTShort = [self createButtonWithTitle:[kBtnTitleCopyDTShortFormat stringByAppendingString:[self stringDateTime:DTFORMAT_SHORT]]
+    _btnCopyDTShort = [self createButtonWithTitle:@""
                                            action:@selector(btnCopyDTClicked:)
                                        onPosition:position++];
     
-    _btnCopyDTLong = [self createButtonWithTitle:[kBtnTitleCopyDTLongFormat stringByAppendingString:[self stringDateTime:DTFORMAT_LONG]]
+    _btnCopyDTLong = [self createButtonWithTitle:@""
                                           action:@selector(btnCopyDTClicked:)
                                       onPosition:position++];
     
-    _btnClearClipboard = [self createButtonWithTitle: [kBtnTitleClearClipboard stringByAppendingString:LOC(@"btn.ClearClipboard")]
+    _btnClearClipboard = [self createButtonWithTitle:@""
                                               action:@selector(clearClipBtnTapped:)
                                           onPosition:position++];
     
-    _btnCustomText1 = [self createButtonWithTitle: [kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:kKeyNameCustomText1]]
+    _btnCustomText1 = [self createButtonWithTitle:@""
                                            action:@selector(copyCustomTextTapped:)
                                        onPosition:position++];
     
-    _btnCustomText2 = [self createButtonWithTitle: [kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:kKeyNameCustomText2]]
+    _btnCustomText2 = [self createButtonWithTitle:@""
                                            action:@selector(copyCustomTextTapped:)
                                        onPosition:position++];
     
-    _btnCustomText3 = [self createButtonWithTitle: [kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:kKeyNameCustomText3]]
+    _btnCustomText3 = [self createButtonWithTitle:@""
                                            action:@selector(copyCustomTextTapped:)
                                        onPosition:position++];
     
     _availableItems = @[_btnCopyDTShort, _btnCopyDTLong, _btnClearClipboard, _btnCustomText1, _btnCustomText2, _btnCustomText3];
+    
+    for (UIButton *oneButton in _availableItems) {
+        [self updateTitleOf:oneButton];
+    }
 }
 
 -(void)layoutControls
 {
-    NSDictionary *controls = @{kKeyNameSwDTShort:_btnCopyDTShort,
+    NSDictionary *itemsVisibilityKeys = @{kKeyNameSwDTShort:_btnCopyDTShort,
                                kKeyNameSwDTLong:_btnCopyDTLong,
                                kKeyNameSwClearClipboard:_btnClearClipboard,
                                kKeyNameSwCustomText1:_btnCustomText1,
@@ -105,9 +108,12 @@ typedef enum : NSUInteger {
 
     [_visibleItems removeAllObjects];
     
-    for (UIView *oneView in buttons) {
-        if( [CHOptionsHelper optionValueForKey:[[controls allKeysForObject:oneView] firstObject]] ) {
-            [_visibleItems addObject:oneView];
+    for (UIButton *oneButton in buttons)
+    {
+        if( [CHOptionsHelper optionValueForKey:[[itemsVisibilityKeys allKeysForObject:oneButton] firstObject]] )
+        {
+            [_visibleItems addObject:oneButton];
+            [self updateTitleOf:oneButton];
         }
     }
     
@@ -170,13 +176,16 @@ typedef enum : NSUInteger {
     [self clearClipboard];
 }
 
+- (IBAction)btnCopyDTClicked:(UIButton *)sender
+{
+    UIPasteboard *pb = [UIPasteboard generalPasteboard];
+    [pb setString:[self valueForButton:sender]];
+}
+
 -(void)copyCustomTextTapped:(UIButton *)sender
 {
-    NSDictionary *customTexts = @{kKeyNameCustomText1:_btnCustomText1,
-                               kKeyNameCustomText2:_btnCustomText2,
-                               kKeyNameCustomText3:_btnCustomText3};
     UIPasteboard *pb = [UIPasteboard generalPasteboard];
-    [pb setString:[CHOptionsHelper optionStringValueForKey:[[customTexts allKeysForObject:sender] firstObject]]];
+    [pb setString:[self valueForButton:sender]];
 }
 
 -(void) clearClipboard
@@ -189,8 +198,9 @@ typedef enum : NSUInteger {
     // Perform any setup necessary in order to update the view.
     DLog(@"");
     
-    [_btnCopyDTShort setTitle:[kBtnTitleCopyDTShortFormat stringByAppendingString:[self stringDateTime:DTFORMAT_SHORT]] forState:UIControlStateNormal];
-    [_btnCopyDTLong setTitle:[kBtnTitleCopyDTLongFormat stringByAppendingString:[self stringDateTime:DTFORMAT_LONG]] forState:UIControlStateNormal];
+    for (UIButton *oneButton in _visibleItems) {
+        [self updateTitleOf:oneButton];
+    }
     
     // If an error is encountered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
@@ -199,15 +209,63 @@ typedef enum : NSUInteger {
     completionHandler(NCUpdateResultNewData);
 }
 
-- (IBAction)btnCopyDTClicked:(id)sender
+-(void)updateTitleOf:(UIButton *)button
 {
-    UIPasteboard *pb = [UIPasteboard generalPasteboard];
-    if( _btnCopyDTShort == sender ) {
-        [pb setString:[self stringDateTime:DTFORMAT_SHORT]];
+    NSArray *timeButtons = @[_btnCopyDTShort, _btnCopyDTLong, _btnClearClipboard];
+    NSDictionary *textButtons = @{kKeyNameCustomText1:_btnCustomText1,
+                                  kKeyNameCustomText2:_btnCustomText2,
+                                  kKeyNameCustomText3:_btnCustomText3};
+    // Updating titles of non custom buttons
+    if( [timeButtons containsObject:button] )
+    {
+        if( _btnCopyDTShort == button ) {
+            [button setTitle:[kBtnTitleCopyDTShortFormat stringByAppendingString:[self stringDateTime:DTFORMAT_SHORT]]
+                    forState:UIControlStateNormal];
+        }
+        else if (_btnCopyDTLong == button) {
+            [button setTitle:[kBtnTitleCopyDTLongFormat stringByAppendingString:[self stringDateTime:DTFORMAT_LONG]]
+                    forState:UIControlStateNormal];
+        }
+        else if (_btnClearClipboard == button) {
+            [button setTitle:[kBtnTitleClearClipboard stringByAppendingString:LOC(@"btn.ClearClipboard")]
+                    forState:UIControlStateNormal];
+        }
+        
     }
-    else if (_btnCopyDTLong == sender) {
-        [pb setString:[self stringDateTime:DTFORMAT_LONG]];
+    // updating titles of custom text buttons
+    else if( [[textButtons allValues] containsObject:button] )
+    {
+        [button setTitle:[kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:[[textButtons allKeysForObject:button] firstObject]]]
+                forState:UIControlStateNormal];
     }
+    
+    return;
+}
+
+-(NSString *)valueForButton:(UIButton *)button
+{
+    NSArray *timeButtons = @[_btnCopyDTShort, _btnCopyDTLong];
+    NSDictionary *textButtons = @{kKeyNameCustomText1:_btnCustomText1,
+                                  kKeyNameCustomText2:_btnCustomText2,
+                                  kKeyNameCustomText3:_btnCustomText3};
+    NSString *value = nil;
+    // non custom texts
+    if( [timeButtons containsObject:button] )
+    {
+        if( _btnCopyDTShort == button ) {
+            value = [self stringDateTime:DTFORMAT_SHORT];
+        }
+        else if (_btnCopyDTLong == button) {
+            value = [self stringDateTime:DTFORMAT_LONG];
+        }
+    }
+    // custom texts
+    else if( [[textButtons allValues] containsObject:button] )
+    {
+        value = [CHOptionsHelper optionStringValueForKey:[[textButtons allKeysForObject:button] firstObject]];
+    }
+    
+    return value;
 }
 
 -(NSString *)stringDateTime:(DTFORMAT)format
