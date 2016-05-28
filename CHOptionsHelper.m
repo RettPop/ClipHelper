@@ -20,6 +20,16 @@
     return boolValue;
 }
 
++(NSString *)optionStringValueForKey:(NSString *)keyName defValue:(NSString *)defValue
+{
+    NSString *value = [self optionStringValueForKey:keyName];
+    if( value ) {
+        return value;
+    }
+    
+    return defValue;
+}
+
 +(NSString *)optionStringValueForKey:(NSString *)keyName
 {
     NSUserDefaults *def = [[NSUserDefaults alloc] initWithSuiteName:kAppGroupName];

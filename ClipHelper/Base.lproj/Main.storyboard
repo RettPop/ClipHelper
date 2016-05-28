@@ -150,7 +150,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time long format" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pok-FX-7wZ">
                                                     <rect key="frame" x="18" y="11" width="233" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -202,14 +201,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEz-AN-WxA">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEz-AN-WxA">
                                                     <rect key="frame" x="254" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="swValueChanged:" destination="ztM-M6-ljg" eventType="valueChanged" id="KGl-f8-XEZ"/>
                                                         <action selector="swValueChanged:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g8D-vv-6uW"/>
                                                     </connections>
                                                 </switch>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom text 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBi-1c-yrT">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom text 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBi-1c-yrT">
                                                     <rect key="frame" x="14" y="6" width="232" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -219,7 +218,11 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="mBi-1c-yrT" firstAttribute="leading" secondItem="O66-fK-w93" secondAttribute="leadingMargin" constant="6" id="JhA-pF-ahY"/>
+                                                <constraint firstItem="mBi-1c-yrT" firstAttribute="centerY" secondItem="O66-fK-w93" secondAttribute="centerY" id="c1u-Sp-SXO"/>
+                                                <constraint firstItem="wEz-AN-WxA" firstAttribute="leading" secondItem="mBi-1c-yrT" secondAttribute="trailing" constant="8" id="riv-eq-E4f"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wEz-AN-WxA" secondAttribute="trailing" constant="9" id="x6K-zf-2w5"/>
+                                                <constraint firstItem="mBi-1c-yrT" firstAttribute="top" secondItem="wEz-AN-WxA" secondAttribute="top" id="x6n-5V-HPC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -230,14 +233,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-Kq-rKe">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-Kq-rKe">
                                                     <rect key="frame" x="254" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="swValueChanged:" destination="ztM-M6-ljg" eventType="valueChanged" id="Ud1-So-7gb"/>
                                                         <action selector="swValueChanged:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gzs-gZ-ITI"/>
                                                     </connections>
                                                 </switch>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom text 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4g-F1-pDy">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom text 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4g-F1-pDy">
                                                     <rect key="frame" x="14" y="6" width="232" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -247,6 +250,10 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="4vj-Kq-rKe" firstAttribute="leading" secondItem="n4g-F1-pDy" secondAttribute="trailing" constant="8" id="HSW-gh-gaC"/>
+                                                <constraint firstItem="n4g-F1-pDy" firstAttribute="centerY" secondItem="Hsb-LC-gEg" secondAttribute="centerY" id="K9n-J0-qb5"/>
+                                                <constraint firstItem="n4g-F1-pDy" firstAttribute="top" secondItem="4vj-Kq-rKe" secondAttribute="top" id="XeM-tv-qiW"/>
+                                                <constraint firstItem="n4g-F1-pDy" firstAttribute="leading" secondItem="Hsb-LC-gEg" secondAttribute="leadingMargin" constant="6" id="Z3X-VR-ZVV"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4vj-Kq-rKe" secondAttribute="trailing" constant="9" id="yqc-md-nmH"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -258,14 +265,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5O-xL-6Bz">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5O-xL-6Bz">
                                                     <rect key="frame" x="254" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="swValueChanged:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FEr-j3-U6z"/>
                                                         <action selector="swValueChanged:" destination="ztM-M6-ljg" eventType="valueChanged" id="I4L-uQ-p1J"/>
                                                     </connections>
                                                 </switch>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom text 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ctx-3o-8RH">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom text 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ctx-3o-8RH">
                                                     <rect key="frame" x="14" y="6" width="232" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -275,7 +282,11 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Ctx-3o-8RH" firstAttribute="top" secondItem="M5O-xL-6Bz" secondAttribute="top" id="5de-Ji-fhA"/>
+                                                <constraint firstItem="M5O-xL-6Bz" firstAttribute="leading" secondItem="Ctx-3o-8RH" secondAttribute="trailing" constant="8" id="KHK-3x-iiC"/>
+                                                <constraint firstItem="Ctx-3o-8RH" firstAttribute="leading" secondItem="JqW-Fa-2Zb" secondAttribute="leadingMargin" constant="6" id="V27-qu-vdQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="M5O-xL-6Bz" secondAttribute="trailing" constant="9" id="apR-TH-kgw"/>
+                                                <constraint firstItem="Ctx-3o-8RH" firstAttribute="centerY" secondItem="JqW-Fa-2Zb" secondAttribute="centerY" id="xv9-9p-XH7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

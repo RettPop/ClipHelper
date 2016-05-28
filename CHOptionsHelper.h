@@ -12,6 +12,7 @@
 
 +(BOOL)optionValueForKey:(NSString *)keyName;
 +(NSString *)optionStringValueForKey:(NSString *)keyName;
++(NSString *)optionStringValueForKey:(NSString *)keyName defValue:(NSString *)defValue;
 +(void)setOptionBoolValue:(BOOL)value forKey:(NSString *)keyName;
 +(void)setOptionStringValue:(NSString *)value forKey:(NSString *)keyName;
 

@@ -15,8 +15,12 @@
 #define kDefBorder 5.f
 #define kDefSpace 5.f
 #define kIconWidth 30.f
-#define kDefButtonHeight 34.f
+#define kDefButtonHeight 44.f
 #define kOneButtonSpaceHeight (kDefButtonHeight + kDefSpace)
+//#define kDefButtonTitleColor [UIColor colorWithRed:17.f/255 green:233.f/255 blue:100.f/255 alpha:1.f]
+#define kDefButtonTitleColor [UIColor whiteColor]
+#define kDefButtonHighlightedTitleColor [UIColor lightGrayColor]
+#define kDefButtonBorderColor [UIColor grayColor]
 
 #define kBtnTitleCopyDTShortFormat @"📆 "
 #define kBtnTitleCopyDTLongFormat @"📅 "
@@ -83,10 +87,6 @@ typedef enum : NSUInteger {
                                        onPosition:position++];
     
     _availableItems = @[_btnCopyDTShort, _btnCopyDTLong, _btnClearClipboard, _btnCustomText1, _btnCustomText2, _btnCustomText3];
-    
-    for (UIButton *oneButton in _availableItems) {
-        [self updateTitleOf:oneButton];
-    }
 }
 
 -(void)layoutControls
@@ -136,9 +136,9 @@ typedef enum : NSUInteger {
     [newButton setFrame:CGRectMake(0, 0, btnWidth, kDefButtonHeight)];
     [newButton addTarget:self action:actioin forControlEvents:UIControlEventTouchUpInside];
     [newButton setTitle:title forState:UIControlStateNormal];
-    [newButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-    [newButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [newButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [newButton setTitleColor:kDefButtonTitleColor forState:UIControlStateNormal];
+    [newButton setTitleColor:kDefButtonHighlightedTitleColor forState:UIControlStateSelected];
+    [newButton setTitleColor:kDefButtonHighlightedTitleColor forState:UIControlStateHighlighted];
     
     [[newButton titleLabel] setFont:[UIFont systemFontOfSize:14.f]];
     
@@ -146,6 +146,10 @@ typedef enum : NSUInteger {
     [newButton setBackgroundColor:[UIColor clearColor]];
     
     [newButton setFrameX:.0f andY:kOneButtonSpaceHeight * position];
+    newButton.layer.cornerRadius = 3.f;
+    [newButton borderWithColor:kDefButtonBorderColor borderWidth:.5f];
+    [newButton setBackgroundColor:[UIColor colorWithWhite:.0f alpha:.01f]];
+
     return newButton;
 }
 
@@ -162,7 +166,7 @@ typedef enum : NSUInteger {
     
     for (UIButton *oneItem in _visibleItems)
     {
-        [oneItem setNewWidth:CGRectGetWidth([[self view] bounds])];
+        [oneItem setNewWidth:CGRectGetWidth([[self view] bounds]) - kDefSpace];
     }
 }
 
@@ -235,7 +239,7 @@ typedef enum : NSUInteger {
     // updating titles of custom text buttons
     else if( [[textButtons allValues] containsObject:button] )
     {
-        [button setTitle:[kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:[[textButtons allKeysForObject:button] firstObject]]]
+        [button setTitle:[kBtnTitleCopyCustomText stringByAppendingString:[CHOptionsHelper optionStringValueForKey:[[textButtons allKeysForObject:button] firstObject] defValue:@""]]
                 forState:UIControlStateNormal];
     }
     
@@ -248,7 +252,7 @@ typedef enum : NSUInteger {
     NSDictionary *textButtons = @{kKeyNameCustomText1:_btnCustomText1,
                                   kKeyNameCustomText2:_btnCustomText2,
                                   kKeyNameCustomText3:_btnCustomText3};
-    NSString *value = nil;
+    NSString *value = @"";
     // non custom texts
     if( [timeButtons containsObject:button] )
     {

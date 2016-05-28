@@ -11,7 +11,6 @@
 #import "CHOptionsHelper.h"
 #import "UIView+SSUIViewCategory.h"
 
-
 typedef enum : NSUInteger {
     SECTION_SETTINGS,
     SECTION_SETUP,
@@ -83,6 +82,7 @@ typedef enum : NSUInteger {
     for (UITextField *oneField in [_fields allValues]) {
         [oneField setText:[CHOptionsHelper optionStringValueForKey:[[_fields allKeysForObject:oneField] firstObject]]];
         [oneField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+        [oneField setReturnKeyType:UIReturnKeyDone];
     }
 }
 - (IBAction)textFieldDidChange:(UITextField *)sender
@@ -135,5 +135,14 @@ typedef enum : NSUInteger {
 
     return title;
 }
+
+#pragma mark -
+#pragma mark UITextField
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return NO;
+}
+
 
 @end
